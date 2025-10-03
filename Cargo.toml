@@ -1,0 +1,28 @@
+[package]
+name = "fulle"
+version = "0.1.0"
+authors = ["Kyoungjihn Kim <kjkim761@gmail.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+async-std = "1.13.2"
+dioxus = { version = "0.6.0", features = ["router"] }
+fastrand = "2.3.0"
+
+[features]
+default = ["web"]
+web = ["dioxus/web"]
+desktop = ["dioxus/desktop"]
+mobile = ["dioxus/mobile"]
+
+[profile.wasm-dev]
+inherits = "dev"
+opt-level = 1
+
+[profile.server-dev]
+inherits = "dev"
+
+[profile.android-dev]
+inherits = "dev"
