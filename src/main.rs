@@ -130,7 +130,7 @@ fn App() -> Element {
                         if interval > max_interval() {
                             max_interval.set(interval);
                         }
-                        if memo().len() >= 6 {
+                        if memo().len() >= 23 {
                             phase.set(4)
                         }
                         location.set(rand::rng().random_range(1..=3));
@@ -149,7 +149,7 @@ fn App() -> Element {
                         if interval > max_interval() {
                             max_interval.set(interval);
                         }
-                        if memo().len() >= 6 {
+                        if memo().len() >= 23 {
                             phase.set(4)
                         }
                         location.set(rand::rng().random_range(1..=3));
