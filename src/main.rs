@@ -6,6 +6,9 @@ fn main() {
     dioxus::launch(App);
 }
 
+const FAVICON: Asset = asset!("/assets/medal.svg");
+const MAIN_CSS: Asset = asset!("/assets/main.css");
+
 #[component]
 fn App() -> Element {
     let mut max_interval = use_signal(||TimeDelta::zero());
@@ -16,84 +19,86 @@ fn App() -> Element {
     let mut memo = use_signal(|| Vec::<i32>::with_capacity(30));
     let mut now = use_signal(||Utc::now());
     rsx! {
+        document::Link { rel: "icon", href: FAVICON }
+        document::Link { rel: "stylesheet", href: MAIN_CSS }
         h1 { "TBACK" }
         a { href: "https://github.com/kjkim761/TBACK", "<about>" }
 
         if phase() != 1 {
-            div { id: "circles",
+            div { class: "circles",
                 h1 {
                     id: "firsto",
                     color: if phase() == 0 || location() == 1 { "black" } else { "white" },
-                    "◯"
+                    "⃝"
                 }
                 h1 {
                     id: "secondo",
                     color: if phase() == 0 || location() == 2 { "black" } else { "white" },
-                    "◯"
+                    "⃝"
                 }
                 h1 {
                     id: "thirdo",
                     color: if phase() == 0 || location() == 3 { "black" } else { "white" },
-                    "◯"
+                    "⃝"
                 }
             }
         } else if countdown() == 3 {
             if location() == 1 {
-                div {
+            div { class: "circles",
                     h1 { "③" }
-                    h1 {color:"white", "◯" }
-                    h1 { color:"white", "◯" }
+                    h1 {color:"white", "⃝" }
+                    h1 { color:"white", "⃝" }
                 }
             } else if location() == 2 {
-                div {
-                    h1 { color:"white", "◯" }
+            div { class: "circles",
+                    h1 { color:"white", "⃝" }
                     h1 { "③" }
-                    h1 { color:"white", "◯" }
+                    h1 { color:"white", "⃝" }
                 }
             } else if location() == 3 {
-                div {
-                    h1 { color:"white", "◯" }
-                    h1 { color:"white", "◯" }
+            div { class: "circles",
+                    h1 { color:"white", "⃝" }
+                    h1 { color:"white", "⃝" }
                     h1 { "③" }
                 }
             }
         } else if countdown() == 2 {
             if location() == 1 {
-                div {
+            div { class: "circles",
                     h1 { "②" }
-                    h1 { color:"white", "◯" }
-                    h1 { color:"white", "◯" }
+                    h1 { color:"white", "⃝" }
+                    h1 { color:"white", "⃝" }
                 }
             } else if location() == 2 {
-                div {
-                    h1 { color:"white", "◯" }
+            div { class: "circles",
+                    h1 { color:"white", "⃝" }
                     h1 { "②" }
-                    h1 { color:"white", "◯" }
+                    h1 { color:"white", "⃝" }
                 }
             } else if location() == 3 {
-                div {
-                    h1 { color:"white", "◯" }
-                    h1 { color:"white", "◯" }
+            div { class: "circles",
+                    h1 { color:"white", "⃝" }
+                    h1 { color:"white", "⃝" }
                     h1 { "②" }
                 }
             }
         } else if countdown() == 1 {
             if location() == 1 {
-                div {
+            div { class: "circles",
                     h1 { "①" }
-                    h1 { color:"white", "◯" }
-                    h1 { color:"white", "◯" }
+                    h1 { color:"white", "⃝" }
+                    h1 { color:"white", "⃝" }
                 }
             } else if location() == 2 {
-                div {
-                    h1 { color:"white", "◯" }
+            div { class: "circles",
+                    h1 { color:"white", "⃝" }
                     h1 { "①" }
-                    h1 { color:"white", "◯" }
+                    h1 { color:"white", "⃝" }
                 }
             } else if location() == 3 {
-                div {
-                    h1 { color:"white", "◯" }
-                    h1 { color:"white", "◯" }
+            div { class: "circles",
+                    h1 { color:"white", "⃝" }
+                    h1 { color:"white", "⃝" }
                     h1 { "①" }
                 }
             }
