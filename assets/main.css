@@ -12,4 +12,6 @@ button{
     display: flex;
     flex-direction: row;
     width: 100;
+      font-family: "Noto Sans Symbols2", sans-serif;
+
 }
