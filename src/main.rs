@@ -9,6 +9,7 @@ fn main() {
 #[component]
 fn App() -> Element {
     let mut max_interval = use_signal(||TimeDelta::zero());
+    let mut max_interval_as_seconds = max_interval().as_seconds_f64();
     let mut location = use_signal(|| rand::rng().random_range(1..=3));
     let mut phase = use_signal(|| 0);
     let mut countdown = use_signal(|| 0);
@@ -129,7 +130,7 @@ fn App() -> Element {
                         if interval > max_interval() {
                             max_interval.set(interval);
                         }
-                        if memo().len() >= 23 {
+                        if memo().len() >= 6 {
                             phase.set(4)
                         }
                         location.set(rand::rng().random_range(1..=3));
@@ -148,7 +149,7 @@ fn App() -> Element {
                         if interval > max_interval() {
                             max_interval.set(interval);
                         }
-                        if memo().len() >= 23 {
+                        if memo().len() >= 6 {
                             phase.set(4)
                         }
                         location.set(rand::rng().random_range(1..=3));
@@ -163,7 +164,7 @@ fn App() -> Element {
             h1 { "Wrong!" }
             a { href: "./", "Restart" }
         } else if phase() == 4 {
-            h1 { "Clear! Your score is {max_interval}." }
+            h1 { "Clear! Score: {max_interval_as_seconds:.2}" }
             a { href: "./", "Restart" }
         }
     }
