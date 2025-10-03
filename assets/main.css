@@ -1,6 +1,7 @@
 /* App-wide styling */
 body {
     margin: 10px;
+    border: 15px solid palevioletred;
 }
 
 button{
@@ -11,7 +12,6 @@ button{
 .circles{
     display: flex;
     flex-direction: row;
-    width: 100;
       font-family: "Noto Sans Symbols2", sans-serif;
 
 }
