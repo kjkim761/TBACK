@@ -127,6 +127,7 @@ fn App() -> Element {
                 "Start"
             }
         } else if phase() == 2 {
+            div{class:"button-row",
             button {
                 onclick: move |ev| {
                     if *memo().last().unwrap() == memo()[memo().len() - 4] {
@@ -165,6 +166,7 @@ fn App() -> Element {
                 },
                 "Unmatch"
             }
+        }
         } else if phase() == 3 {
             h1 { "Wrong!" }
             a { href: "./", "Restart" }
