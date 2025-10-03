@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>fulle</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+  <link rel="preload" as="script" href="/./assets/fulle-bb077c4d5719ab59.js" crossorigin><link rel="preload" as="fetch" type="application/wasm" href="/./assets/fulle_bg-55b01c5ff43b3d14.wasm" crossorigin></head>
+  <body>
+    <div id="main"></div>
+  <script>
+            // We can't use a module script here because we need to start the script immediately when streaming
+            import("/./assets/fulle-bb077c4d5719ab59.js").then(
+                ({ default: init }) => {
+                init("/./assets/fulle_bg-55b01c5ff43b3d14.wasm").then((wasm) => {
+                    if (wasm.__wbindgen_start == undefined) {
+                    wasm.main();
+                    }
+                });
+                }
+            );
+            </script>
+            
+            </body>
+</html>
