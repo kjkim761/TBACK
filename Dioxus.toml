@@ -1,7 +1,6 @@
 [application]
 
 [web.app]
-base_path = "TBACK"
 
 # HTML title tag content
 title = "TBACK"

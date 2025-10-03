@@ -161,10 +161,10 @@ fn App() -> Element {
             }
         } else if phase() == 3 {
             h1 { "Wrong!" }
-            a { href: "/", "Restart" }
+            a { href: "./", "Restart" }
         } else if phase() == 4 {
             h1 { "Clear! Your score is {max_interval}." }
-            a { href: "/", "Restart" }
+            a { href: "./", "Restart" }
         }
     }
 }
